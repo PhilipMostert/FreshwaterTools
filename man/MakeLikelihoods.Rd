@@ -6,7 +6,6 @@
 \usage{
 MakeLikelihoods(
   data,
-  datasetIndex,
   components,
   effectsList = list(PO = NULL, PA = NULL, Counts = NULL),
   formulaList = list(PO = y ~ ., PA = y ~ ., Counts = y ~ .),
@@ -25,7 +24,7 @@ MakeLikelihoods(
 
 \item{likelihoodFamily}{A named list of the statistical families for each likelihood.}
 
-\item{predictionFormulas}{A named list of formulas for predicting on. Defaults to \code{NULL} which does not create any prediction formulas. The response variable for the formula needs to be y}
+\item{predictionFormula}{A named list of formulas for predicting on. Defaults to \code{NULL} which does not create any prediction formulas. The response variable for the formula needs to be y}
 }
 \value{
 A \link[inlabru]{bru_obs_list} object containing the likelihoods to be used by \link[inlabru]{bru}.

@@ -9,7 +9,7 @@ ExtractCovariates(data, covariates, used = NULL)
 \arguments{
 \item{data}{A \code{metric_graph_data} object.}
 
-\item{covariates}{A spatial raster in a format usable by \pkg{terra}.}
+\item{covariates}{A sf object of covariate data.}
 
 \item{used}{Which spatial covariates to include in the model.}
 }
