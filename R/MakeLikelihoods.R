@@ -5,7 +5,7 @@
 #' @param components Components to include from the model. Must be the output of \code{\link{CreateComponents}}.
 #' @param effectsList A named list containing the vectors of named effects for each likelihood. If \code{NULL} for a likelihood, will use all effects in components.
 #' @param formulaList A named list containing the formulas for each likelihood.
-#' @param predictionFormulas A named list of formulas for predicting on. Defaults to \code{NULL} which does not create any prediction formulas. The response variable for the formula needs to be y
+#' @param predictionFormula A named list of formulas for predicting on. Defaults to \code{NULL} which does not create any prediction formulas. The response variable for the formula needs to be y
 #' @param likelihoodFamily A named list of the statistical families for each likelihood.
 #'
 #' @return A \link[inlabru]{bru_obs_list} object containing the likelihoods to be used by \link[inlabru]{bru}.
@@ -15,7 +15,6 @@
 #'
 
 MakeLikelihoods <- function(data,
-                            datasetIndex,
                             components,
                             effectsList = list(PO = NULL, PA = NULL, Counts = NULL),
                             formulaList = list(PO = y ~ ., PA = y ~ ., Counts = y ~ .),
