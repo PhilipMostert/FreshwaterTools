@@ -21,7 +21,7 @@ MakeLikelihoods <- function(data,
                             likelihoodFamily = list(PO = 'poisson', PA = 'binomial', Counts = 'poisson'),
                             predictionFormula = NULL) {
 
-  if (!inherits(data, 'metric_graph_data')) stop ('data needs to be a metric_graph_data object.')
+  if (!inherits(data, 'metric_graph_data') & !inherits(data, 'sf')) stop ('data needs to be a metric_graph_data or sf object.')
 
   requiredVars <- c('y', 'likelihood', 'species', 'PA_intercept', 'PO_intercept', 'Counts_intercept', 'e', '.edge_number',
                     '.distance_on_edge', '.group', 'dataset_name')
