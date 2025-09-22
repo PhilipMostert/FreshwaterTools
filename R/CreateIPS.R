@@ -25,6 +25,7 @@ CreateIPS <- function(graph,...) {
                        PO_intercept = 1, ## This should change to PO_intercept I think
                        PA_intercept = NA, ##
                        Counts_intercept = NA, ##
+                       .group = 'IPS',
                        .coord_x = graph$mesh$V[,1],
                        .coord_y = graph$mesh$V[,2],
                        likelihood = 'PO') ##Will probably also need a repl col for species. But can do that with fm_cprod
@@ -38,6 +39,8 @@ CreateIPS <- function(graph,...) {
     ips <- fm_cprod(ips, data.frame(species = na.omit(unique(graph$.__enclos_env__$private$data$species))))
     ips$.block_origin <- NULL
     ips$.block <- NULL
+    ips$weight <- NULL
+    ips$.group <- paste0('IPS.', ips$species)
 
   }
 
